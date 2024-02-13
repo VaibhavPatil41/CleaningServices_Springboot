@@ -76,6 +76,15 @@ public class Login {
 		this.password = password;
 		this.role = role;
 	}
+
+	public Login(String username, String password, Role role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.role = role;
+	}
+	
+	
 	
 	
 	

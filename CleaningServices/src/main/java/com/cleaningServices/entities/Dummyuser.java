@@ -9,13 +9,14 @@ public class Dummyuser {
 	private String dob;
 	private String password;
 	private String username;
+	private int role;
 	
 	public Dummyuser() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	public Dummyuser(String name, String email, String contactno, String address, String dob, String password,
-			String username) {
+			int role,String username) {
 		super();
 		this.name = name;
 		this.email = email;
@@ -24,7 +25,9 @@ public class Dummyuser {
 		this.dob = dob;
 		this.password = password;
 		this.username = username;
+		this.role = role;
 	}
+	
 	public String getName() {
 		return name;
 	}
@@ -67,5 +70,13 @@ public class Dummyuser {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	public int getRole() {
+		return role;
+	}
+	public void setRole(int role) {
+		this.role = role;
+	}
+	
+	
 
 }

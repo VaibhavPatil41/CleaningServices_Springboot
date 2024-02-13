@@ -44,16 +44,15 @@ public class User {
 	}
 	
 
-	public User(int user_id, Login login_id, String name, String email, String contactno, String address, String dob) {
+	public User( Login login_id, String name, String email, String contactno, String address, String dob) {
 		super();
-		this.user_id = user_id;
+		
 		this.login_id = login_id;
 		this.name = name;
 		this.email = email;
 		this.contactno = contactno;
 		this.address = address;
 		this.dob = dob;
-		
 	}
 
 

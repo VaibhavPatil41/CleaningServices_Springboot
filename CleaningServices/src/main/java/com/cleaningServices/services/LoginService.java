@@ -18,11 +18,11 @@ public class LoginService {
 			return lrepo.save(u);
 		}
 		
-		public Login getLoginByUsername(String uname,String pass)
+		public Login getLoginByUsername(String uname)
 		{
-			System.out.println(uname+" "+pass);
+			System.out.println(uname);
 			
-			 return lrepo.getUserByUsername(uname,pass);
+			 return lrepo.getUserByUsername(uname);
 		}
 		
 		/*public int getLoginByUsernamepass(String uname,String pass)
