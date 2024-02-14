@@ -27,7 +27,7 @@ public class Login {
 	private String password;
 	
 	@ManyToOne
-  @JoinColumn(name="role_id")
+	@JoinColumn(name="role_id")
 	Role role;
 
 	public int getLoginid() {

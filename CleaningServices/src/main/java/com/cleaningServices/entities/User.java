@@ -54,6 +54,21 @@ public class User {
 		this.address = address;
 		this.dob = dob;
 	}
+	
+	
+	
+
+
+	public User(int user_id, Login login_id, String name, String email, String contactno, String address, String dob) {
+		super();
+		this.user_id = user_id;
+		this.login_id = login_id;
+		this.name = name;
+		this.email = email;
+		this.contactno = contactno;
+		this.address = address;
+		this.dob = dob;
+	}
 
 
 	public int getUser_id() {
@@ -80,13 +95,17 @@ public class User {
 		this.name = name;
 	}
 
+	
+
 	public String getEmail() {
 		return email;
 	}
 
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 
 	public String getContactno() {
 		return contactno;
