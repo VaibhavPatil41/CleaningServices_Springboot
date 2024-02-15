@@ -1,22 +1,18 @@
 package com.cleaningServices.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.cleaningServices.entities.Dummyuser;
+import com.cleaningServices.Dummy.DummyServiceProvider;
+import com.cleaningServices.Dummy.Dummyuser;
+import com.cleaningServices.Dummy.LoginRequest;
 import com.cleaningServices.entities.Login;
-import com.cleaningServices.entities.LoginRequest;
 import com.cleaningServices.entities.Role;
+import com.cleaningServices.entities.ServiceProvider;
 import com.cleaningServices.entities.User;
 import com.cleaningServices.services.LoginService;
 import com.cleaningServices.services.Role_Service;
+import com.cleaningServices.services.ServiceProviderService;
 import com.cleaningServices.services.UserService;
 
 @RestController
@@ -27,12 +23,10 @@ public class UserController {
 	 @Autowired
 		UserService uservice;
 	 @Autowired
+		ServiceProviderService spservice;
+	 @Autowired
 	 	Role_Service rl;
 	 
-//	 @ResponseBody
-//	 @PostMapping("/checkLogin")
-//	 
-	 ///@RequestMapping(value = "/checkLogin", method = RequestMethod.POST)
 	 
 	@PostMapping("/checkLogin")
     public int checkLogin(@RequestBody LoginRequest lr)
@@ -69,6 +63,19 @@ public class UserController {
     	
 		System.out.println(cr.getName()+""+cr.getContactno());
 	    return a;
-	    
+	}
+	
+	@PostMapping("/spRegister")
+	public ServiceProvider registerServiceProvider(@RequestBody DummyServiceProvider dr)
+	{
+		ServiceProvider sp=null;
+    	Role r=rl.getRole(dr.getRole_id());
+    	Login c=lservice.saveLogin(new Login(dr.getUsername(),dr.getPassword(),r));
+    	
+    	System.out.println("Email : "+dr.getEmail() + "Role_id:"+dr.getRole_id());
+    	sp=spservice.saveSP(new ServiceProvider(c,dr.getName(),dr.getEmail(),dr.getContactno(),dr.getAddress(),dr.getLicense_id()));
+    	
+		//System.out.println(dr.getName()+""+dr.getContactno());
+	    return sp;
 	}
 }
