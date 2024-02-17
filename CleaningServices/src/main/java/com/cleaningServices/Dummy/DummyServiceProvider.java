@@ -11,8 +11,9 @@ public class DummyServiceProvider {
 	private String username;
 	private String license_id;
 	private int role_id;
+	private int status;
 	public DummyServiceProvider(String name, String email, String contactno, String address, String password,
-			String username, String license_id, int role_id) {
+			String username, String license_id, int role_id, int status) {
 		super();
 		this.name = name;
 		this.email = email;
@@ -22,6 +23,7 @@ public class DummyServiceProvider {
 		this.username = username;
 		this.license_id = license_id;
 		this.role_id = role_id;
+		this.status = status;
 	}
 	public DummyServiceProvider() {
 		super();
@@ -75,8 +77,12 @@ public class DummyServiceProvider {
 	public void setRole_id(int role_id) {
 		this.role_id = role_id;
 	}
-	
-	
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	
 	
 	

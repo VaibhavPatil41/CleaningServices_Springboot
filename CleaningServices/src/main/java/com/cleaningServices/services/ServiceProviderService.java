@@ -1,10 +1,12 @@
 package com.cleaningServices.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cleaningServices.entities.Login;
 import com.cleaningServices.entities.ServiceProvider;
 import com.cleaningServices.repository.ServiceProviderRepo;
 
@@ -37,8 +39,59 @@ public class ServiceProviderService {
 		 }
 		 return s;
 	}
-
-	public ServiceProvider getUserByLoginId(int id) {
+	
+//	public ServiceProvider getSPByLoginId(Login id)
+//	{
+//			System.out.println("IN sp repo"+id);
+//			//Optional<ServiceProvider> or=Optional.ofNullable(sprepo.getSPByLoginId(id));
+//			ServiceProvider sp=sprepo.getSPByLoginId(id);
+//		 
+////		 try
+////		 {
+////			 if(sp!=null)
+////			 {
+////				 s=sp.get();
+////			 }
+////		 }
+////		 catch(Exception e)
+////		 {
+////			 e.printStackTrace();
+////			 
+////		 }
+//		 return sp;
+//	}
+	
+	public ServiceProvider getSpByLoginId(Login id) {
 		return sprepo.getSPByLoginId(id);
 	}
+
+	public ServiceProvider getUserByLoginId(Login id) {
+		System.out.println("SpService"+sprepo.getSPByLoginId(id));
+		return sprepo.getSPByLoginId(id);
+	}
+	
+	public List<ServiceProvider> approve() {
+		
+		return sprepo.getApprove();
+	}
+	
+	////////////////////////////////
+	public void approveSP(int sp_id) {
+		System.out.println("Service"+sp_id);
+		  sprepo.approveSp(sp_id);		
+	}
+	
+	public void deletebyId(int spId) {
+		 sprepo.deleteById(spId);		
+	}
+	
+
+	
+	public ServiceProvider getSp(Integer loginId) {
+		System.out.println("in sprepo"+loginId);
+	    return sprepo.getSP(loginId);
+	}
+
+
+	
 }

@@ -20,7 +20,7 @@ public class LoginService {
 		
 		public Login getLoginByUsername(String uname)
 		{
-			System.out.println(uname);
+			System.out.println("lservice: "+uname);
 			
 			 return lrepo.getUserByUsername(uname);
 		}

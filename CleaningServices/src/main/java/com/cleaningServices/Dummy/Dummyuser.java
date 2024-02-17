@@ -16,7 +16,7 @@ public class Dummyuser {
 		// TODO Auto-generated constructor stub
 	}
 	public Dummyuser(String name, String email, String contactno, String address, String dob, String password,
-			int role_id,String username) {
+			String username,int role_id) {
 		super();
 		this.name = name;
 		this.email = email;
@@ -26,6 +26,7 @@ public class Dummyuser {
 		this.password = password;
 		this.username = username;
 		this.role_id = role_id;
+		System.out.println("Hi"+role_id);
 	}
 	
 	public String getName() {

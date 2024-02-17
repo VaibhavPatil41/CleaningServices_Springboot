@@ -34,22 +34,25 @@ public class ServiceProvider {
 	
 	@Column
 	String license_id;
+	
+	@Column
+	int status;
+
+	public ServiceProvider() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public ServiceProvider(Login login_id, String name, String email, String contactno, String address,
-			String license_id) {
+			String license_id, int status) {
 		super();
-		
 		this.login_id = login_id;
 		this.name = name;
 		this.email = email;
 		this.contactno = contactno;
 		this.address = address;
 		this.license_id = license_id;
-	}
-
-	public ServiceProvider() {
-		super();
-		// TODO Auto-generated constructor stub
+		this.status = status;
 	}
 
 	public int getSp_id() {
@@ -107,8 +110,14 @@ public class ServiceProvider {
 	public void setLicense_id(String license_id) {
 		this.license_id = license_id;
 	}
-	
-	
-	
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
 	
 }

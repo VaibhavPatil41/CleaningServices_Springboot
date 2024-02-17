@@ -17,6 +17,7 @@ public class Role_Service {
 	
 	public Role getRole(int id)
 	{
+		System.out.println("IN Role Service id = "+id);
 		 Optional<Role> or=roleRepo.findById(id);
 		 Role r=null;
 		 try
